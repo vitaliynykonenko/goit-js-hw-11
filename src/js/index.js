@@ -36,6 +36,7 @@ async function onSearchForm(evt) {
     const response = await fetchImages(query, page, per_page);
     renderGallery(response.data.hits);
     totalHits = response.data.totalHits;
+    page += 1;
     simpleLightBox = new SimpleLightbox('.gallery a').refresh();
     alertImagesFound();
      
